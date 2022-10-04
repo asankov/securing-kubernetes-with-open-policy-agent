@@ -32,3 +32,7 @@ To reproduce the demo:
     ```
 
 6. Bonus: Apply the modified [`ConstraintTemplate`](k8s/constraint-template-2.yaml) and repeat the demo to make sure it still works
+
+    ```shell
+    kubectl apply -f k8s/constraint-template-2.yaml
+    ```
