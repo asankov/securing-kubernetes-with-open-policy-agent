@@ -1,0 +1,31 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: norunasroot
+spec:
+  crd:
+    spec:
+      names:
+        kind: NoRunAsRoot
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package norunasroot
+
+        violation[{"msg": msg}] {
+          c := input.review.object.spec.template.spec.containers[_]
+          not c["securityContext"]
+          msg := sprintf("Container '%s' does not have a security context", [c.name])
+        }
+
+        violation[{"msg": msg}] {
+          c := input.review.object.spec.template.spec.containers[_]
+          not c.securityContext.runAsUser
+          msg := sprintf("Container '%s' does not have the 'runAsUser' field set", [c.name])
+        }
+
+        violation[{"msg": msg}] {
+          c := input.review.object.spec.template.spec.containers[_]
+          c.securityContext.runAsUser == 0
+          msg := sprintf("Container '%s' has the 'runAsUser' field set to '0'", [c.name])
+        }

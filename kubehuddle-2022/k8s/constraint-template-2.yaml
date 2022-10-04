@@ -1,0 +1,31 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: norunasroot
+spec:
+  crd:
+    spec:
+      names:
+        kind: NoRunAsRoot
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package norunasroot
+
+        violation[{"msg": msg}] {
+          c := input.review.object.spec.template.spec.containers[_]
+          runs_as_root(c)
+          msg := sprintf("Container '%s' runs as root", [c.name])
+        }
+
+        runs_as_root(c) {
+          not c["securityContext"]
+        }
+
+        runs_as_root(c) {
+          not c.securityContext.runAsUser
+        }
+
+        runs_as_root(c) {
+          c.securityContext.runAsUser == 0
+        }

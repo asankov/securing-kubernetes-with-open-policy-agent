@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: non-compliant-no-security-context
+spec:
+  selector:
+    matchLabels:
+      app: non-compliant-no-security-context
+  template:
+    metadata:
+      labels:
+        app: non-compliant-no-security-context
+    spec:
+      containers:
+      - name: non-compliant-no-security-context
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: non-compliant-run-as-user-not-set
+spec:
+  selector:
+    matchLabels:
+      app: non-compliant-run-as-user-not-set
+  template:
+    metadata:
+      labels:
+        app: non-compliant-run-as-user-not-set
+    spec:
+      containers:
+      - name: non-compliant-run-as-user-not-set
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+        securityContext: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: non-compliant-run-as-user-set-to-zero
+spec:
+  selector:
+    matchLabels:
+      app: non-compliant-run-as-user-set-to-zero
+  template:
+    metadata:
+      labels:
+        app: non-compliant-run-as-user-set-to-zero
+    spec:
+      containers:
+      - name: non-compliant-run-as-user-set-to-zero
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsUser: 0
