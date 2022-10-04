@@ -1,5 +1,18 @@
 # Securing Kubernetes with Open Policy Agent (OPA)
 
+These is the source of my presentation about Securing Kubernetes with Open Policy Agent (and Gatekeeper).
+
+This presentation has been presented multiple times and has been slightly modified each time according to the audience and length of the session.
+
+You can find the nodes from any edition here.
+
+| Edition                   | Notes                      |
+| ------------------------- | -------------------------- |
+| BSides Sofia 2022         | TODO                       |
+| OSCAL Tirana 2022         | TODO                       |
+| KubeHuddle Edinburgh 2022 | [Here](./kubehuddle-2022/) |
+|                           |                            |
+
 Build-in Kubernetes security is not enough for most organizations to enforce granular rules and policies to the workloads running in their clusters.
 
 That is why, Kubernetes has pluggable mechanism for deploying additional validation for your resources.
