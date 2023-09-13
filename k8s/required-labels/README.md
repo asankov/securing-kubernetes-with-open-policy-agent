@@ -1,10 +1,6 @@
-# BSides Sofia, 2022
+# Required Labels
 
-These are the [slides](./presentation.pdf) and [manifests](./k8s/) from presenting this presentation at [BSides Sofia 2022](https://securitybsides.bg/).
-
-## Demo
-
-To reproduce the demo:
+This example shows how to use Open Policy Agent and Gatekeeper to enforce that all Deployments in your cluster will have a set of required labels.
 
 1. [Install Gatekeeper](https://asankov.dev/blog/2022/04/21/securing-kubernetes-with-open-policy-agent/#installing-gatekeeper)
 2. Apply the [`ConstraintTemplate`](k8s/constraint-template.yaml) resource
