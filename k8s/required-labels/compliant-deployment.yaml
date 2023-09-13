@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: non-compliant
+  name: compliant
 spec:
   selector:
     matchLabels:
-      app: non-compliant
+      app: compliant
   template:
     metadata:
       labels:
-        app: non-compliant
+        app: compliant
         gatekeeper: "gatekeeper"
     spec:
       containers:
-      - name: non-compliant
+      - name: compliant
         image: nginx
         resources:
           limits:

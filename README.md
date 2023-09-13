@@ -2,16 +2,34 @@
 
 These is the source of my presentation about Securing Kubernetes with Open Policy Agent (and Gatekeeper).
 
-This presentation has been presented multiple times and has been slightly modified each time according to the audience and length of the session.
+## Examples
 
-You can find the nodes from any edition here.
+To reproduce the examples shown during the presentation, go to the [k8s](./k8s) folder and follow the instructions there.
 
-| Edition                   | Notes                                |
-| ------------------------- | ------------------------------------ |
-| BSides Sofia 2022         | [Here](./2022/bsides-sofia)          |
-| OSCAL Tirana 2022         | [Here](./2022/oscal-tirana)          |
-| KubeHuddle Edinburgh 2022 | [Here](./2022/kubehuddle-edinburgh/) |
-|                           |                                      |
+## Slides
+
+To find the slides for any edition of the presentation, go to the [slides](./slides/) folder.
+
+## Blog post
 
 If you want to find the full article about why Kubernetes security is important, why admission control is useful, how OPA and Gatekeeper can help us with that, and how to get started with them, you can do so on my blog - <https://asankov.dev/blog/2022/04/21/securing-kubernetes-with-open-policy-agent/>.
 
+## Presented at
+
+This session has been presented at:
+
+### 🇧🇬 BSides Sofia 2022
+
+[Slides](./slides/bsides-sofia-2022.pdf)
+
+[Recording (in Bulgarian)](https://www.youtube.com/watch?v=JewdgJASVxI)
+
+### 🇦🇱 OSCAL Tirana 2022
+
+[Slides](./slides/oscal-tirana-2022.pdf)
+
+### 🏴󠁧󠁢󠁳󠁣󠁴󠁿 KubeHuddle Edinburgh 2022
+
+[Slides](./slides/kubehuddle-edinburgh-2022.pdf)
+
+[Recording](https://www.youtube.com/live/DcOYB4cUM9U?feature=share&t=12186)
