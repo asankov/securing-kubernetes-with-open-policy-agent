@@ -2,10 +2,12 @@
 
 To reproduce the demos, follow the instructions.
 
-As a prerequisite you need a Kubernetes cluster, and kubectl access to it.
+As a prerequisite you need a Kubernetes cluster, and `kubectl` access to it.
+
+## Demos
 
 There are 2 demos that you can try:
 
-## [Required labels](./required-labels/)
+### [Required labels](./required-labels/)
 
-## [Enforce deployment running as non-root](./non-root-deployment)
+### [Enforce deployment running as non-root](./non-root-deployment)
